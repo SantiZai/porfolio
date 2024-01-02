@@ -1,0 +1,22 @@
+---
+import Contact from "../components/Contact.astro";
+import Education from "../components/Education.astro";
+import Footer from "../components/Footer.astro";
+import About from "../components/About.astro";
+import Intro from "../components/Intro.astro";
+import Navbar from "../components/Navbar.astro";
+import Projects from "../components/Projects.astro";
+import Layout from "../layouts/Layout.astro";
+---
+
+<Layout title="Santiago Zaidan - Portafolio personal">
+  <main class="sm:w-2/3 lg:w-1/2 w-full mx-auto">
+    <Navbar />
+    <Intro />
+    <About />
+    <Projects />
+    <Education />
+    <Contact />
+    <Footer />
+  </main>
+</Layout>
