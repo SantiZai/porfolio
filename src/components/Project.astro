@@ -2,17 +2,108 @@
 const { title, description, technologies } = Astro.props;
 ---
 
-<article class="w-full">
-  <h3>{title}</h3>
-  <p>{description}</p>
-  <ul>
-    {
-      technologies &&
-        technologies.map((tech: string) => (
-          <li>
-            <span>{tech}</span>
-          </li>
-        ))
-    }
-  </ul>
+<article class="w-full sm:w-[calc(50%-0.5rem)]">
+  <div class="card">
+    <div class="container-title">
+      <div class="bar left-bar"></div>
+      <div class="bar right-bar"></div>
+      <h3>{title}</h3>
+    </div>
+    <div class="container-description">
+      <p>{description}</p>
+      <ul class="flex gap-1 flex-wrap mt-2">
+        {
+          technologies &&
+            technologies.map((tech: string) => (
+              <li>
+                <span class="px-2 py-1 bg-white/70 text-slate-900 font-bold rounded-lg text-[10px]">{tech}</span>
+              </li>
+            ))
+        }
+      </ul>
+    </div>
+  </div>
 </article>
+
+<style>
+  .card {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    aspect-ratio: 16/9;
+    padding: 10px;
+    overflow: hidden;
+    background: rgba(255, 255, 255, 0.1);
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.2);
+    backdrop-filter: blur(7.5px);
+    -webkit-backdrop-filter: blur(7.5px);
+    border-radius: 10px;
+  }
+
+  .card:hover {
+    .bar {
+      height: 60%;
+      color: #ccc;
+    }
+
+    .container-title h3 {
+      top: 20%;
+    }
+
+    .container-description {
+      top: 35%;
+      opacity: 1;
+    }
+  }
+
+  .container-title {
+    width: 100%;
+    height: 100%;
+    position: relative;
+  }
+
+  .container-title h3 {
+    position: absolute;
+    text-align: center;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    transition: all 0.5s ease-in-out;
+  }
+
+  .bar {
+    width: 2px;
+    height: 30%;
+    background-color: #aaa;
+    border-radius: 2px;
+    position: absolute;
+    transition: all 0.5s ease-in-out;
+    -webkit-box-shadow: 0px 0px 105px 21px rgba(255, 255, 255, 0.2);
+    -moz-box-shadow: 0px 0px 105px 21px rgba(255, 255, 255, 0.2);
+    box-shadow: 0px 0px 105px 21px rgba(255, 255, 255, 0.2);
+  }
+
+  .left-bar {
+    top: 20%;
+    left: 10%;
+  }
+
+  .right-bar {
+    bottom: 20%;
+    right: 10%;
+  }
+
+  .container-description {
+    font-size: 14px;
+    position: absolute;
+    left: 30%;
+    width: 40%;
+    top: 100%;
+    opacity: 0;
+    transition: all 0.8s;
+  }
+
+  .container-description p {
+    color: #ccc;
+  }
+</style>
