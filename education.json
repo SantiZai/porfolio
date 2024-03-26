@@ -1,0 +1,17 @@
+[
+    {
+        "period": "Actualmente...",
+        "title": "Autodidacta",
+        "description": "Continuamente estoy en búsqueda de poner a prueba mis conocimientos y habilidades en proyectos personales o freelance, aportando siempre lo mejor de mí para ogrecer un producto que cumpla con cada necesidad de mis clientes, utilizando para ello buenas prácticas y tecnologías innovadoras."
+    },
+    {
+        "period": "Abril 2023",
+        "title": "Argentina Programa",
+        "description": "Participé de esta formación en desarrollo full-stack brindado por el INTI donde en el transcurso del mismo se me exigió utilizar Angular y Java mientras me enfrentaba a distintos retos, para finalmente como proyecto final integrador crear el cliente, el servidor y la base de datos demostrando todos los conocimientos obtenidos."
+    },
+    {
+        "period": "Enero 2023",
+        "title": "Programación Codo a Codo",
+        "description": "En este bootcamp brindado por la Agencia de Apendizaje a lo Largo de la Vida se me brindaron ámplios conocimientos de JavaScript y NodeJS para poder crear aplicaciones full-stack desde cero a producción."
+    }
+]
