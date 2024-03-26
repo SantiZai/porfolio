@@ -24,6 +24,9 @@ const { title, description, technologies } = Astro.props;
         }
       </ul>
     </div>
+    <div class="container-link">
+      <a href="google.com"><span>{"->"}</span></a>
+    </div>
   </div>
 </article>
 
@@ -35,7 +38,7 @@ const { title, description, technologies } = Astro.props;
     aspect-ratio: 16/9;
     padding: 10px;
     overflow: hidden;
-    background: rgba(255, 255, 255, 0.1);
+    background: rgba(255, 255, 255, 0.023);
     box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.2);
     backdrop-filter: blur(7.5px);
     -webkit-backdrop-filter: blur(7.5px);
@@ -53,17 +56,21 @@ const { title, description, technologies } = Astro.props;
     }
 
     .container-title h3 {
-      top: 20%;
+      top: 15%;
     }
 
     .container-description {
-      top: 35%;
+      top: 30%;
       opacity: 1;
     }
 
     .container-description .badge {
       background-color: #a9cbdf;
       color: #333;
+    }
+
+    .container-link {
+      opacity: 100%;
     }
   }
 
@@ -75,8 +82,8 @@ const { title, description, technologies } = Astro.props;
 
   .container-title h3 {
     position: absolute;
-    text-align: center;
     top: 50%;
+    text-wrap: nowrap;
     left: 50%;
     transform: translate(-50%, -50%);
     transition: all 0.5s ease-in-out;
@@ -118,5 +125,19 @@ const { title, description, technologies } = Astro.props;
   .container-description .badge {
     background-color: #ffffff80;
     transition: all 0.5s ease-out 0.3s;
+  }
+
+  .container-link {
+    cursor: pointer;
+    position: absolute;
+    width: 8%;
+    text-align: center;
+    bottom: 0;
+    right: 0;
+    opacity: 0%;
+    color: #ccc;
+    background: rgba(100, 100, 100, 0.3);
+    transition: all .5s ease;
+    border-radius: 5px 0px 0px;
   }
 </style>
