@@ -1,62 +1,24 @@
+---
+import EducationPeriod from "./EducationPeriod.astro";
+import education from "../../education.json";
+---
+
 <section id="educacion">
   <h2 class="text-xl sm:text-2xl mb-4">Mi educación</h2>
   <ol class="relative border-s border-gray-200 dark:border-gray-700">
-    <li class="mb-10 ms-4">
-      <div
-        class="absolute w-3 h-3 bg-gray-200 rounded-full mt-1.5 -start-1.5 border border-white dark:border-gray-900 dark:bg-gray-700"
-      >
-      </div>
-      <time
-        class="mb-1 text-sm font-normal leading-none text-gray-400 dark:text-gray-500"
-        >Actualmente...</time
-      >
-      <h3 class="text-lg font-semibold text-gray-900 dark:text-white">
-        Autodidacta
-      </h3>
-      <p class="text-base font-normal text-gray-500 dark:text-gray-400">
-        Continuamente estoy en busqueda de poner a prueba mis conocimientos y
-        habilidades en proyectos personales o freelance, aportando siempre lo
-        mejor de mí para ofrecer un producto que cumpla con cada necesidad de
-        mis clientes, utilizando para ello buenas prácticas y tecnologías
-        revolucionarias del mercado.
-      </p>
-    </li>
-    <li class="mb-10 ms-4">
-      <div
-        class="absolute w-3 h-3 bg-gray-200 rounded-full mt-1.5 -start-1.5 border border-white dark:border-gray-900 dark:bg-gray-700"
-      >
-      </div>
-      <time
-        class="mb-1 text-sm font-normal leading-none text-gray-400 dark:text-gray-500"
-        >Abril 2023</time
-      >
-      <h3 class="text-lg font-semibold text-gray-900 dark:text-white">
-        Argentina Programa
-      </h3>
-      <p class="text-base font-normal text-gray-500 dark:text-gray-400">
-        Participé de este curso de desarrollo full-stack brindado por el INTI
-        donde en el transcurso del mismo se me exigió utilizar Angular y Java
-        para crear tanto la parte visual como la base de datos de un portafolio
-        personal como proyecto final.
-      </p>
-    </li>
-    <li class="mb-10 ms-4">
-      <div
-        class="absolute w-3 h-3 bg-gray-200 rounded-full mt-1.5 -start-1.5 border border-white dark:border-gray-900 dark:bg-gray-700"
-      >
-      </div>
-      <time
-        class="mb-1 text-sm font-normal leading-none text-gray-400 dark:text-gray-500"
-        >Enero 2023</time
-      >
-      <h3 class="text-lg font-semibold text-gray-900 dark:text-white">
-        Programación Codo a Codo
-      </h3>
-      <p class="text-base font-normal text-gray-500 dark:text-gray-400">
-        En este bootcamp brindado por la Agencia de Aprendizaje a lo Largo de la
-        Vida se me brindaron ámplios conocimientos de JavaScript y NodeJS para
-        poder crear aplicaciones full-stack desde cero a producción.
-      </p>
-    </li>
+    <EducationPeriod
+      period=""
+      title=""
+      description=""
+    />
+    {
+      education.map((each) => (
+        <EducationPeriod
+          period={each.period}
+          title={each.title}
+          description={each.description}
+        />
+      ))
+    }
   </ol>
 </section>
